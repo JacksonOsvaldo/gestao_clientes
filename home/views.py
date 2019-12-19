@@ -10,7 +10,9 @@ def home(request):
     b = 20
     c = a * b
 
-    return render(request, 'home.html', {'result': c})
+    footer_message = "Teste"
+
+    return render(request, 'home.html', {'result': c, 'footer_message': footer_message})
 
 
 def my_logout(request):

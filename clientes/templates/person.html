@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load my_tags %}
 
 {% block title %} Administracao {% endblock %}
 
@@ -20,6 +20,9 @@
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </a>
                     </li>
+
+                {% empty %}
+                    <li>Desculpe, não tem clientes cadastrados</li>
 
                 {% endfor %}
             </ul>
@@ -43,12 +46,9 @@
     </div>
 
 
+
 {% endblock %}
 
 {% block footer %}
-    <footer class="footer">
-      <div class="container">
-        <span class="text-muted">Desenvolvimento web com Django 2.x</span>
-      </div>
-    </footer>
+    {% include "clientes/footer.html"%}
 {% endblock %}

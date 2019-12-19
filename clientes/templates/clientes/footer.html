@@ -1,0 +1,17 @@
+{% load my_tags %}
+{% load filters %}
+
+{% block footer %}
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted foot-message">a</span>
+
+         <div id="hora-server">
+            <h3>Hora do servidor</h3>
+            {% current_time "%Y-%m-%d %I:%M" as the_time %}
+            {{ the_time }}
+         </div>
+
+      </div>
+    </footer>
+{% endblock %}
