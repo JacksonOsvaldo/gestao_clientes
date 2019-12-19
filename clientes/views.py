@@ -5,6 +5,7 @@ from .forms import PersonForm
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 @login_required
 def persons_list(request):
@@ -58,5 +59,11 @@ class PersonCreate(CreateView):
 class PersonUpdate(UpdateView):
     model = Person
     fields = ['first_name', 'last_name', 'salary', 'age', 'bio', 'photo']
-    success_url = '/clientes/person_list'
+    success_url = reverse_lazy('person_list_cbv')
 
+class PersonDelete(DeleteView):
+    model = Person
+    # success_url = reverse_lazy('person_list_cbv')
+
+    def get_success_url(self):
+        return reverse_lazy('person_list_cbv')
