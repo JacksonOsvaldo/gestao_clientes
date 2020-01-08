@@ -9,7 +9,7 @@ source env/bin/activate
 ## Instalando dependências
 ```
 pip install -r requirements.txt
-python contrib/enc-gen.py
+python contrib/env-gen.py
 ```
 
 ## Executando
